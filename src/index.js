@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './css/styles.css';
@@ -12,12 +11,25 @@ const Avatar = () => {
 
 const Skill = (props) => {
   return (
-    <li style={{ backgroundColor: props.backgroundColor }}>
-      {props.text}
+    <li style={{ backgroundColor: props.color }}>
+      <span>{props.text}</span>
       <span>
         <img src={props.emoji} alt="Level description emoji" />
       </span>
     </li>
+  );
+};
+
+const SkillList = () => {
+  return (
+    <ul className="skills">
+      <Skill text="HTML+CSS" emoji="./images/emojis/strong.jpeg" color="blue" />
+      <Skill text="JavaScipt" emoji="./images/emojis/strong.jpeg" color="yellow" />
+      <Skill text="Web Design" emoji="./images/emojis/strong.jpeg" color="yellowgreen " />
+      <Skill text="GitHub" emoji="./images/emojis/thumbs-up.jpeg" color="maroon" />
+      <Skill text="React" emoji="./images/emojis/strong.jpeg" color="lightblue" />
+      <Skill text="Svelte" emoji="./images/emojis/strong.jpeg" color="crimson" />
+    </ul>
   );
 };
 
@@ -30,38 +42,7 @@ const Details = () => {
         fugit ipsam quasi ullam cumque ratione pariatur obcaecati laudantium, magnam
         veniam eos? Accusamus officiis architecto corrupti maiores labore.
       </p>
-      <ul className="skills">
-        <Skill
-          text="HTML+CSS"
-          emoji="./images/emojis/strong.jpeg"
-          backgroundColor="blue"
-        />
-        <Skill
-          text="JavaScipt"
-          emoji="./images/emojis/strong.jpeg"
-          backgroundColor="yellow"
-        />
-        <Skill
-          text="Web Design"
-          emoji="./images/emojis/strong.jpeg"
-          backgroundColor="yellowgreen "
-        />
-        <Skill
-          text="GitHub"
-          emoji="./images/emojis/thumbs-up.jpeg"
-          backgroundColor="maroon"
-        />
-        <Skill
-          text="React"
-          emoji="./images/emojis/strong.jpeg"
-          backgroundColor="lightblue"
-        />
-        <Skill
-          text="Svelte"
-          emoji="./images/emojis/strong.jpeg"
-          backgroundColor="crimson"
-        />
-      </ul>
+      <SkillList />
     </div>
   );
 };

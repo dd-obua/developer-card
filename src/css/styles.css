@@ -15,7 +15,8 @@ body {
 
 .card {
   width: 60rem;
-  border: 3px solid #333;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.25);
+  margin: 2.4rem 0 0 2.4rem;
 }
 
 .developer-image {
